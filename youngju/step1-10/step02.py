@@ -1,6 +1,8 @@
 import numpy as np
 
 
+# Function class 구현
+
 class Variable:
     def __init__(self, data):
         self.data = data
@@ -13,13 +15,13 @@ class Function:
         output = Variable(y)
         return output
 
-    def forward(self, in_data):
+    def forward(self):
         raise NotImplementedError()
-
 
 class Square(Function):
     def forward(self, x):
         return x ** 2
+
 
 if __name__ == "__main__":
     x = Variable(np.array(10))
